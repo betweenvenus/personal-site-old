@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jon highsmith: web developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:400,700" rel="stylesheet">
+    <script type="text/javascript" src="js/baffle.min.js"> </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <style>span { display: inline-block; }</style>
+  </head>
+  <body>
+
+    <video autoplay muted loop id="video" poster="img/poster.png">
+      <source src="img/video.mp4" type="video/mp4">
+      </video>
+
+    </video>
+    <main>
+    <section class="primary">Hi. I'm Jon Highsmith, and I like to design & develop the web.</section>
+    <section>
+      <ul>
+        <div class="list-wrapper">
+        <li><a href="http://github.com/betweenvenus/">jon.github</a></li> 
+        <li><a href="https://www.linkedin.com/in/betweenvenus/">jon.linkedin</a></li> 
+        <li><a href="http://twitter.com/betweenvenus">jon.twitter</a></li> 
+        <li><a href="mailto:jon@jonhighsmith.com?subject=Hi Jon!">jon.email</a></li>
+      </div>
+    </ul>
+    </section>
+    </main>
+    <section style="display:none" class="examples">
+    
+        <img src="img/ufo.gif" width="100px" height="50px" />Things I've made recently:<img src="img/ufo.gif" width="100px" height="50px" />
+    </section>
+    <script>
+    </script>
+  </body>
+<!--
+         .                                  ,@%          ..             *@@                                   .,             @@
+        %@@                                 .@@         ,@@,            ,@@,                                  @@(    @@#     @@,
+         ..              /#  */.            ,@@  .,      .              *@@. .,       .,**,   %#  ..   .      .    **@@&//.  @@. .,.
+        /@@,   &@@@@@%   @@@@@@@@           ,@@@@@@@@   %@@   *@@@@@@@. *@@@@@@@@   %@@@@@@( (@@@@@@@@@@@@.  /@@  /@@@@@@@&  @@@@@@@@
+        *@@*  @@@   %@# .@@@# ,@@.          ,@@@. .@@   &@&  &@@.   @@* *@@@, ,@@.  &@@*     /@@@* @@,  @@(  (@@     &@&     @@@,  @@.
+        .@@( ,@@,   /@% ,@@%  *@@.          ,@@   .@@   @@%  @@*   *@@  *@@,  ,@@*    *&@@@. /@@,  @@,  &@&  %@@     &@&     @@,   @@*
+         @@%  &@@/,%@@  *@@/  .@@*          ,@@    @@*  @@%  @@@,.%@@&  *@@.   @@% .%/..*@@% /@@,  &@/  (@@  %@@     &@@     @@.   &@%
+         @@%   ,@@@@#   .@@,   @@/          .&/    (@/  (@*   ,&@@@(@&  .    #@%  (@@@@&,  .@&   %@%  ,@@, *@#     %@%         ,@%
+     @@, &@&                                                       &@/
+     *@@@@@.                                                 @@@@@@@(
+
+
+>:^)
+
+-->
+<script>
+const b = baffle('.primary',
+  {
+    characters:'¥▓░▒█☻:/*x你好',
+    speed: 50
+  }
+).reveal(2000);
+
+const primary = document.querySelector(".primary");
+const text = primary.textContent.replace(/([^\w \xC0-\xFF]|\w)/g, "<span class='letter'>$&</span>");
+
+
+setTimeout(() => animate(), 2100);
+
+ const animate = () => {
+  primary.innerHTML = text;
+  const letterWiggle = anime({
+    targets: ".letter",
+    rotate: function() { return anime.random(-20, 20) },
+    translateY: function() { return anime.random(-10, 10) },
+    direction: 'alternate',
+    duration: function() { return anime.random(200, 800 ) },
+    easing: 'linear',
+    loop: true
+  });
+  }
+
+</script>
+</html>

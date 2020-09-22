@@ -1,0 +1,20 @@
+:root {
+  --font: 'Hind Vadodara', sans-serif;
+  --gray: #2b2b2b;
+  --pink: #f8cbff;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--gray);
+}
+
+.primary {
+  font-weight: bold;
+  font-size: 4em;
+  color: #fff;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 10%;
+
+}
